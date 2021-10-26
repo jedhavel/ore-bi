@@ -12,7 +12,10 @@ function _append!(dataframes::Vector{})
     end
 end
 
-_append!(dfs)
+if size(dfs)[1] > 1
+    _append!(dfs)
+end
+
 p_instantburn = plot(dfs[1], x=:DateTime, y=:Quantity, Layout(title="Instant Burn"))
 
 p_cumulativeburn = plot(dfs[1], x=:DateTime, y=:CumulativeQuantity, Layout(title="Cumulative Burn"))
