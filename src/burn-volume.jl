@@ -8,7 +8,7 @@ dfs = DataFrame.(datafiles) # Convert to DataFrames
 
 function _append!(dataframes::Vector{})
     for i = 1:size(dataframes)[1] - 1 # size returns tuple, we want the 1st value
-        append!(dataframes[i], dataframes[i+1])
+        append!(dataframes[1], dataframes[i+1])
     end
 end
 
